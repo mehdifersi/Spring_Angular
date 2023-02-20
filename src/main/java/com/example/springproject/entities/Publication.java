@@ -1,16 +1,16 @@
 package com.example.springproject.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table( name = "Publication")
@@ -21,4 +21,13 @@ public class Publication implements Serializable {
     private Integer idPublication; // Clé primaire
     private String sujet ;
     private  String contenu;
+
+    @ManyToOne
+    Users publierPar;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Users> likerPar;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    List<Comment> listOfComments;
 }
