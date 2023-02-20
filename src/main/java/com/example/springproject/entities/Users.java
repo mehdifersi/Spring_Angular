@@ -12,10 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Getter
@@ -30,9 +27,18 @@ public class Users implements Serializable{
     private Integer idUser; // Clé primaire
     private String firstName;
     private String lastName;
-    private String username;
+    private Role role;
     private String email;
     private String password;
     private String numTel;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "MM/dd/yyyy")
+    private Date birthday;
+    private Status status=Status.Active;
+    private Integer warning=0;
+
+
+    @ManyToOne
+    Event event;
 
 }
