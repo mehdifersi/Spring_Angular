@@ -13,17 +13,14 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table( name = "FileInfo")
-public class FileInfo implements Serializable {
+@Table( name = "Bloc")
+public class Bloc implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idFile")
-    private Integer idFile;
+    @Column(name = "idBloc")
+    private Integer idBloc; // Clé primaire
+    private String nomBloc;
 
-    private String name;
-    private String url;
-
-    public FileInfo(String filename, String url) {
-    }
-
+    @ManyToOne
+    University university2;
 }
