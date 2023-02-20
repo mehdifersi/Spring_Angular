@@ -1,2 +1,30 @@
-package com.example.springproject.entities;public class RDV_offre {
+package com.example.springproject.entities;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table( name = "RDV_offre")
+public class RDV_offre implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idRdv")
+    private Integer idRdv;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "MM/dd/yyyy")
+    private Date schedule;
+    private String room;
+    private String assignment;
+    private String notifications;
+
+    @OneToOne(mappedBy = "rdv_offre")
+    private CondidatOffre condidatOffre;
 }
