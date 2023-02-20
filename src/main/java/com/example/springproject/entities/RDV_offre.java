@@ -10,6 +10,7 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table( name = "RDV_offre")

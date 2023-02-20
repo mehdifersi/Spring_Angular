@@ -1,19 +1,17 @@
 package com.example.springproject.controller;
 
-import com.example.springproject.ServicesImpl.UserServiceImp;
-import com.example.springproject.entities.Users;
+import com.example.springproject.ServicesImpl.ComplaintServiceImp;
+import com.example.springproject.entities.Complaint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/complaint")
 @CrossOrigin("*")
-public class UserController extends BaseController<Users,Integer>{
+public class ComplaintController extends BaseController<Complaint,Integer>{
 
     @Autowired
-    UserServiceImp userServiceImp;
-
-
+    ComplaintServiceImp complaintServiceImp;
 }

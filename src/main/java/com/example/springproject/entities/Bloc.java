@@ -1,16 +1,15 @@
 package com.example.springproject.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table( name = "Bloc")
@@ -23,4 +22,7 @@ public class Bloc implements Serializable {
 
     @ManyToOne
     University university2;
+
+    @OneToMany(cascade= CascadeType.ALL, mappedBy = "bloc")
+    List<Classroom> listOfClassroom;
 }
