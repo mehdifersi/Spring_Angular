@@ -1,10 +1,7 @@
 package com.example.springproject.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,6 +12,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table( name = "Event")
@@ -36,6 +34,6 @@ public class Event implements Serializable {
     @OneToMany(cascade= CascadeType.ALL, mappedBy = "event")
     List<Users> listOfParticipant;
 
-    @OneToMany(cascade= CascadeType.ALL, mappedBy = "event")
+    @OneToMany(cascade= CascadeType.ALL, mappedBy = "event2")
     List<Users> speakerList;
 }
