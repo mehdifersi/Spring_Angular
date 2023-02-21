@@ -1,5 +1,6 @@
 package com.example.springproject.entities;
 
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
@@ -16,13 +17,19 @@ import java.util.Set;
 @AllArgsConstructor
 @Table( name = "Interview")
 public class Interview implements Serializable {
+=======
+public class Interview  implements Serializable {
+
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idInterview;
 
     @Temporal(TemporalType.DATE)
+
     @JsonFormat(pattern = "MM/dd/yyyy")
+
     private Date dateInterview ;
 
     private Integer TotalScore;
@@ -36,4 +43,5 @@ public class Interview implements Serializable {
 
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Users> evaluators;
+
 }
