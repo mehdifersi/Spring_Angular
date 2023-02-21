@@ -2,24 +2,16 @@ package com.example.springproject.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.multipart.MultipartFile;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table( name = "Users")
@@ -30,9 +22,39 @@ public class Users implements Serializable{
     private Integer idUser; // Clé primaire
     private String firstName;
     private String lastName;
-    private String username;
+    private Role role;
     private String email;
     private String password;
     private String numTel;
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "MM/dd/yyyy")
+    private Date birthday;
+    private Status status=Status.Active;
+    private Integer warning=0;
 
+
+    @ManyToOne
+    Event event;
+    @ManyToOne
+    Event event2;
+    @OneToMany(cascade= CascadeType.ALL, mappedBy = "complaintPar")
+    List<Complaint> listOfComplaints;
+
+    @OneToMany(cascade= CascadeType.ALL, mappedBy = "publierPar")
+    List<Publication> listOfPublication;
+
+    @ManyToMany(mappedBy = "likerPar",cascade = CascadeType.ALL)
+    private Set<Publication> listPublicationLikee;
+
+    @ManyToOne
+    Realisation realisation;
+
+    @OneToOne
+    Interview interviewStudent;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Interview> InterviewEvaluators;
+
+    @ManyToOne
+    Classroom classroom;
 }

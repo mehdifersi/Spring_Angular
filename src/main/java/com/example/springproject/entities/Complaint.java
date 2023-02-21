@@ -1,4 +1,5 @@
 package com.example.springproject.entities;
+
 import javax.persistence.*;
 
 import lombok.*;
@@ -12,6 +13,10 @@ import java.util.Date;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+
+@Table( name = "Complaint")
+
+
 
 
 
@@ -29,7 +34,11 @@ public class Complaint   implements Serializable{
     private StatusComplaint status;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    Users user;
+
+    Users complaintPar;
+
+}
+
 
 }
 
