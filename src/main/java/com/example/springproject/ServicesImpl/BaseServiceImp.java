@@ -1,9 +1,8 @@
 package com.example.springproject.ServicesImpl;
 
 import com.example.springproject.ServiceInterface.BaseServiceInterface;
-import com.example.springproject.repository.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +10,7 @@ public class BaseServiceImp<T, id> implements BaseServiceInterface<T, id>{
 
 
     @Autowired
-    BaseRepository<T, id> jpaRepo;
+    JpaRepository<T, id> jpaRepo;
 
     @Override
     public List<T> retrieveAll() {
