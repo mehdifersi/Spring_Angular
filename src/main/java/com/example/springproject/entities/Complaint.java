@@ -13,7 +13,14 @@ import java.util.Date;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+
 @Table( name = "Complaint")
+
+
+
+
+
+
 public class Complaint   implements Serializable{
 
     @Id
@@ -27,6 +34,11 @@ public class Complaint   implements Serializable{
     private StatusComplaint status;
 
     @ManyToOne(cascade = CascadeType.ALL)
+
     Users complaintPar;
 
 }
+
+
+}
+
