@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface MailingRepository extends JpaRepository<Mailingcontent,Integer> {
+public interface MailingRepository extends BaseRepository<Mailingcontent,Integer> {
 
     List<Mailingcontent> getAllByToEmail(String email);
 }
