@@ -1,6 +1,7 @@
 package com.example.springproject.entities;
 
 public enum StatusComplaint {
+
     PENDING,   // still not checked : init state
     RESOLVED,  // either after : acknowledged + solution or disciplinary action
     REJECTED,  // dismiss complaint + explain reasons or rejection
@@ -21,4 +22,5 @@ public enum StatusComplaint {
 //     integer warnings  ( init =0 )
 //     enum state   ( suspended , expelled , active = init state  )
 //     black list containing expelled ot suspended ( temporary for int num_days ) + access control
+
 }
