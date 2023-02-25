@@ -21,6 +21,7 @@ public class FileInfo implements Serializable {
     private String name;
     private String url;
 
+
     public FileInfo(String filename, String url) {
     }
 

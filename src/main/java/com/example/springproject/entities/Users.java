@@ -56,6 +56,9 @@ public class Users implements Serializable{
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Interview> InterviewEvaluators;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<FileInfo> files;
+
     @ManyToOne
     Classroom classroom;
 }

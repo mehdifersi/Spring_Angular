@@ -30,4 +30,10 @@ public class PDFGeneratorService {
         document.add(paragraph2);
         document.close();
     }
+
+
+    public void importPDF(){
+
+    }
+
 }

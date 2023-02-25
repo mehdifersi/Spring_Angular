@@ -32,4 +32,5 @@ public class PDFExportController {
 
         this.pdfGeneratorService.export(response);
     }
+
 }
