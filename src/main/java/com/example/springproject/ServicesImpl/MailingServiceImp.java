@@ -55,4 +55,13 @@ public class MailingServiceImp extends BaseServiceImp<Mailingcontent, Integer> i
         return mailingcontents;
 
     }
+
+    @Override
+    public void sendMailStudentConfirmation(Users user) {
+        String toEmail= user.getEmail();
+        String Subject = "Confirmation Mail";
+        String body = " Welcome to Esprit , " +
+                "this is an automatic confirmation mail for your account registration ";
+        sendEmail(toEmail,Subject,body);
+    }
 }

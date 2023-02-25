@@ -22,6 +22,7 @@ public class Users implements Serializable{
     private Integer idUser; // Clé primaire
     private String firstName;
     private String lastName;
+    @Enumerated(EnumType.STRING)
     private Role role;
     private String email;
     private String password;
