@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class BaseServiceImp<T, id> implements BaseServiceInterface<T, id>{
 
 
 
+    @Autowired
     BaseRepository<T, id> jpaRepo;
 
     @Override

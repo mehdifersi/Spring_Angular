@@ -32,7 +32,7 @@ public class PDFGeneratorService {
         document.add(subtitle);
 
         // Add the recipient's name
-        Image img = Image.getInstance(new File("C:\\Users\\GAMING\\Downloads\\qrcode.png").getAbsolutePath());
+        Image img = Image.getInstance(new File("C:\\Users\\noura\\Downloads\\qrcode.png").getAbsolutePath());
         img.setAlignment(Element.ALIGN_CENTER);
         img.scaleToFit(100f, 100f);
         document.add(img);

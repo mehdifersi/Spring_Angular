@@ -1,5 +1,6 @@
 package com.example.springproject.ServicesImpl;
 
+import com.example.springproject.ServiceInterface.UserServiceInterface;
 import com.example.springproject.entities.Users;
 
 import com.example.springproject.repository.UsersRepository;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 @Slf4j
-public class UserServiceImp extends BaseServiceImp<Users,Integer>  {
+public class UserServiceImp extends BaseServiceImp<Users,Integer> implements UserServiceInterface {
 
     @Autowired
     UsersRepository usersRepository ;
