@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
+
 public abstract class BaseController<T, id> {
 
 
-
+    @Autowired
     BaseServiceInterface<T, id> baseService;
 
     @GetMapping()
