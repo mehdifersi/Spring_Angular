@@ -1,11 +1,17 @@
 package com.example.springproject.ServicesImpl;
 
 import com.lowagie.text.*;
+import com.lowagie.text.pdf.PdfPCell;
+import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Service
 public class PDFGeneratorService {
@@ -14,20 +20,46 @@ public class PDFGeneratorService {
         PdfWriter.getInstance(document, response.getOutputStream());
 
         document.open();
-        Font fontTitle = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
-        fontTitle.setSize(18);
+        // Add a title
+        Paragraph title = new Paragraph("Certificate of Completion");
+        title.setAlignment(Element.ALIGN_CENTER);
+        document.add(title);
 
-        Paragraph paragraph = new Paragraph("This is a title.", fontTitle);
-        paragraph.setAlignment(Paragraph.ALIGN_CENTER);
+        // Add a subtitle
+        Paragraph subtitle = new Paragraph("This is to certify that");
+        subtitle.setAlignment(Element.ALIGN_CENTER);
+        subtitle.setSpacingBefore(20f);
+        document.add(subtitle);
 
-        Font fontParagraph = FontFactory.getFont(FontFactory.HELVETICA);
-        fontParagraph.setSize(12);
+        // Add the recipient's name
+        Image img = Image.getInstance(new File("C:\\Users\\GAMING\\Downloads\\qrcode.png").getAbsolutePath());
+        img.setAlignment(Element.ALIGN_CENTER);
+        img.scaleToFit(100f, 100f);
+        document.add(img);
+        Paragraph name = new Paragraph("John Doe");
+        name.setAlignment(Element.ALIGN_CENTER);
+        name.setSpacingBefore(20f);
+        document.add(name);
 
-        Paragraph paragraph2 = new Paragraph("This is a paragraph.", fontParagraph);
-        paragraph2.setAlignment(Paragraph.ALIGN_LEFT);
+        // Add the course name and date
+        PdfPTable table = new PdfPTable(2);
+        PdfPCell cell1 = new PdfPCell(new Paragraph("Course Name:"));
+        PdfPCell cell2 = new PdfPCell(new Paragraph("Spring Boot Basics"));
+        PdfPCell cell3 = new PdfPCell(new Paragraph("Completion Date:"));
+        PdfPCell cell4 = new PdfPCell(new Paragraph(new SimpleDateFormat("dd/MM/yyyy").format(new Date())));
+        table.addCell(cell1);
+        table.addCell(cell2);
+        table.addCell(cell3);
+        table.addCell(cell4);
+        table.setSpacingBefore(20f);
+        document.add(table);
 
-        document.add(paragraph);
-        document.add(paragraph2);
+        // Add a message
+        Paragraph message = new Paragraph("We hereby certify that the above-named person has successfully completed the course and is awarded this certificate.");
+        message.setAlignment(Element.ALIGN_JUSTIFIED);
+        message.setSpacingBefore(20f);
+        document.add(message);
+
         document.close();
     }
 }
