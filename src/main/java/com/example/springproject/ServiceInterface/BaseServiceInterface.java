@@ -1,7 +1,5 @@
 package com.example.springproject.ServiceInterface;
 
-import org.springframework.data.repository.NoRepositoryBean;
-
 import java.util.List;
 
 public interface BaseServiceInterface<T, id> {
