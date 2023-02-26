@@ -33,7 +33,7 @@ public class MailingServiceImp extends BaseServiceImp<Mailingcontent, Integer> i
 
         log.info("sending mail to {} ,subject is :{}",toEmail,Subject);
         SimpleMailMessage message =  new SimpleMailMessage();
-        message.setFrom("mahdi.fersi@esprit.com");
+        message.setFrom("mahdi.fersi@esprit.tn");
         message.setTo(toEmail);
         message.setText(body);
         message.setSubject(Subject);

@@ -25,6 +25,7 @@ public class UserServiceImp extends BaseServiceImp<Users,Integer> implements Use
     @Override
     public Users addStudent(Users user) {
         mailingServiceImp.sendMailStudentConfirmation(user);
+        usersRepository.save(user);
         return user;
     }
 
@@ -34,6 +35,11 @@ public class UserServiceImp extends BaseServiceImp<Users,Integer> implements Use
         Users user = usersRepository.findById(idUser).orElse(null);
         user.getFiles().add((FileInfo) file);
 
+    }
+
+    @Override
+    public String LevelSuggestion(Users user) {
+        return null;
     }
 
 
