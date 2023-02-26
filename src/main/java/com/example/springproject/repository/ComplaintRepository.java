@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Date;
 import java.util.List;
 public interface ComplaintRepository extends BaseRepository<Complaint,Integer> {
-   // List<Complaint> findAllByStatusOrderByDate(StatusComplaint status);
+//    List<Complaint> findAllByStatusOrderByDate(StatusComplaint status);
    // List<Complaint> findAllByDateOrderByIdComplaint(Date date);
    // Complaint findByIdComplaint(Integer id);
    // List<Complaint> findByUser(Users user);
