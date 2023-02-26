@@ -2,6 +2,7 @@ package com.example.springproject.repository;
 
 import com.example.springproject.entities.Users;
 
+
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
