@@ -22,7 +22,7 @@ public class Users implements Serializable{
     private String firstName;
     private String lastName;
     @Enumerated(EnumType.STRING)
-    private UserRole role;
+    private Role role;
     private String email;
     private String password;
     private String numTel;
