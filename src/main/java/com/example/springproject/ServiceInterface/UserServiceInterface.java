@@ -9,6 +9,7 @@ public interface UserServiceInterface extends BaseServiceInterface<Users,Integer
 
     public void addFileAndAssignToStudent(MultipartFile file, Integer idUser);
 
+    public String LevelSuggestion(Users user);
 
 
 }
