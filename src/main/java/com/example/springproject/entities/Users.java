@@ -82,6 +82,9 @@ public class Users implements UserDetails {
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Interview> InterviewEvaluators;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<FileInfo> files;
+
     @ManyToOne
     Classroom classroom;
 

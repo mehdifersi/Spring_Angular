@@ -33,7 +33,7 @@ public class MailingServiceImp extends BaseServiceImp<Mailingcontent, Integer> i
 
         log.info("sending mail to {} ,subject is :{}",toEmail,Subject);
         SimpleMailMessage message =  new SimpleMailMessage();
-        message.setFrom("mahdi.fersi@esprit.com");
+        message.setFrom("mahdi.fersi@esprit.tn");
         message.setTo(toEmail);
         message.setText(body);
         message.setSubject(Subject);
@@ -54,5 +54,14 @@ public class MailingServiceImp extends BaseServiceImp<Mailingcontent, Integer> i
         List<Mailingcontent> mailingcontents = mailingRepository.getAllByToEmail(u.getEmail());
         return mailingcontents;
 
+    }
+
+    @Override
+    public void sendMailStudentConfirmation(Users user) {
+        String toEmail= user.getEmail();
+        String Subject = "Confirmation Mail";
+        String body = " Welcome to Esprit , " +
+                "this is an automatic confirmation mail for your account registration ";
+        sendEmail(toEmail,Subject,body);
     }
 }

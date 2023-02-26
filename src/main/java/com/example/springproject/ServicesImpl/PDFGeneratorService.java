@@ -62,4 +62,10 @@ public class PDFGeneratorService {
 
         document.close();
     }
+
+
+    public void importPDF(){
+
+    }
+
 }
