@@ -5,6 +5,8 @@ import com.example.springproject.entities.FileInfo;
 import com.example.springproject.entities.Users;
 import com.example.springproject.repository.FileInfoRepository;
 import com.example.springproject.repository.UsersRepository;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,7 +14,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.Set;
 
 @Service
-public class UserServiceImp extends BaseServiceImp<Users,Integer> implements UserServiceInterface{
+@AllArgsConstructor
+@Slf4j
+public class UserServiceImp extends BaseServiceImp<Users,Integer> {
 
     @Autowired
     UsersRepository usersRepository ;
@@ -22,7 +26,8 @@ public class UserServiceImp extends BaseServiceImp<Users,Integer> implements Use
 
     @Autowired
     FilesStorageServiceImpl filesStorageService;
-    @Override
+
+    /*@Override
     public Users addStudent(Users user) {
         mailingServiceImp.sendMailStudentConfirmation(user);
         usersRepository.save(user);
@@ -41,6 +46,6 @@ public class UserServiceImp extends BaseServiceImp<Users,Integer> implements Use
     public String LevelSuggestion(Users user) {
         return null;
     }
-
+ */
 
 }

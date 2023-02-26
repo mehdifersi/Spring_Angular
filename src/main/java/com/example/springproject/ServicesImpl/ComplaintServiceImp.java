@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ComplaintServiceImp extends BaseServiceImp<Complaint,Integer> implements ComplaintServiceInterface {
+public class ComplaintServiceImp extends BaseServiceImp<Complaint,Integer>  {
 
     @Autowired
     ComplaintRepository complaintRepository;

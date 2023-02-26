@@ -1,6 +1,6 @@
 package com.example.springproject.entities;
 
-public enum Role {
+public enum UserRole {
     Teacher,
     Student,
     Agent,

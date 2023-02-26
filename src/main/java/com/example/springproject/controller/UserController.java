@@ -28,7 +28,7 @@ public class UserController extends BaseController<Users,Integer>{
     }
     */
 
-
+/*
     @PostMapping("/addStudent")
     public Users addStudent(@RequestBody Users user){
         userServiceImp.addStudent(user);
@@ -39,5 +39,5 @@ public class UserController extends BaseController<Users,Integer>{
     public void addFileAndAssignToStudent(@RequestParam("file") MultipartFile file,@PathVariable Integer idUser){
         userServiceImp.addFileAndAssignToStudent(file,idUser);
     }
-
+*/
 }

@@ -1,7 +1,6 @@
 package com.example.springproject.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,7 +22,7 @@ public class Users implements Serializable{
     private String firstName;
     private String lastName;
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private UserRole role;
     private String email;
     private String password;
     private String numTel;
