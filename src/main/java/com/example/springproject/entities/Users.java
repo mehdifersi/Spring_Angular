@@ -25,7 +25,7 @@ public class Users implements UserDetails {
     private String lastName;
     private String username;
     @Enumerated(EnumType.STRING)
-    private UserRole role;
+    private Role role;
     private String email;
     private String password;
     private String numTel;
@@ -37,7 +37,7 @@ public class Users implements UserDetails {
     private Boolean locked=false;
     private Boolean enabled=false;
 
-    public Users(String firstName, String lastName, String username, UserRole role, String email, String password, String numTel, Date birthday, Status status, Integer warning, Boolean locked, Boolean enabled) {
+    public Users(String firstName, String lastName, String username, Role role, String email, String password, String numTel, Date birthday, Status status, Integer warning, Boolean locked, Boolean enabled) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -52,7 +52,7 @@ public class Users implements UserDetails {
         this.enabled = enabled;
     }
 
-    public Users(String firstName, String lastName, String password, String email, UserRole role) {
+    public Users(String firstName, String lastName, String password, String email, Role role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
@@ -89,7 +89,7 @@ public class Users implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
-        for (UserRole role : UserRole.values()) {
+        for (Role role : Role.values()) {
             authorities.add(new SimpleGrantedAuthority(role.name()));
         }
 
