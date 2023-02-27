@@ -23,10 +23,10 @@ public class Publication implements Serializable {
     private  String contenu;
 
     @ManyToOne
-    Users publierPar;
+    User publierPar;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Users> likerPar;
+    private Set<User> likerPar;
 
     @OneToMany(cascade = CascadeType.ALL)
     List<Comment> listOfComments;
