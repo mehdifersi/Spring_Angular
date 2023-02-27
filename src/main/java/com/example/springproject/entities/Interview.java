@@ -30,9 +30,9 @@ public class Interview  implements Serializable {
     private String Deliberation; // not sure if string
 
     @OneToOne
-    private Users student;
+    private User student;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Users> evaluators;
+    private Set<User> evaluators;
 
 }

@@ -22,7 +22,7 @@ public class Classroom implements Serializable {
     private Integer etage;
 
     @OneToMany(cascade= CascadeType.ALL, mappedBy = "classroom")
-    List<Users> listOfStudent;
+    List<User> listOfStudent;
 
     @ManyToOne
     Bloc bloc;
