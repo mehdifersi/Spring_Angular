@@ -9,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.*;
 
 @Entity
@@ -70,7 +69,7 @@ public class User implements UserDetails {
     private Set<Interview> InterviewEvaluators;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private Set<FileInfo> files;
+    private Set<FileDB> files;
 
     @ManyToOne
     Classroom classroom;
