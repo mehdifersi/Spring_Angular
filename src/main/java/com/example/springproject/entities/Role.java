@@ -1,8 +1,9 @@
 package com.example.springproject.entities;
 
+
 public enum Role {
-    Teacher,
-    Student,
-    Agent,
-    Condidat
+    ROLE_TEACHER,
+    ROLE_STUDENT,
+    ROLE_AGENT,
+    ROLE_CONDIDAT
 }
