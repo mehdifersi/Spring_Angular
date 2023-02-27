@@ -1,22 +1,17 @@
 package com.example.springproject.controller;
 
-import com.example.springproject.ServiceInterface.UserServiceInterface;
-import com.example.springproject.ServicesImpl.UserServiceImp;
-import com.example.springproject.entities.Users;
+import com.example.springproject.ServicesImpl.AdServiceImp;
+import com.example.springproject.entities.Ads;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/ads")
 @CrossOrigin("*")
-public class UserController extends BaseController<Users,Integer>{
+public class AdsController extends BaseController<Ads,Integer>{
 
     @Autowired
-    UserServiceImp userServiceImp;
-
-
+    AdServiceImp adServiceImp;
 }

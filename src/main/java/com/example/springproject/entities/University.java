@@ -1,9 +1,6 @@
 package com.example.springproject.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,6 +9,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table( name = "University")
@@ -24,6 +22,7 @@ public class University implements Serializable {
 
     @OneToMany(mappedBy = "university",cascade = CascadeType.ALL)
     private Set<Departement> departementSet;
+
     @OneToMany(mappedBy = "university2",cascade = CascadeType.ALL)
     private Set<Bloc> blocs;
 }
