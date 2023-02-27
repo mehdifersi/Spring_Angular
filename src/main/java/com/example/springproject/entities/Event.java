@@ -32,8 +32,8 @@ public class Event implements Serializable {
     private float budget;
 
     @OneToMany(cascade= CascadeType.ALL, mappedBy = "event")
-    List<Users> listOfParticipant;
+    List<User> listOfParticipant;
 
     @OneToMany(cascade= CascadeType.ALL, mappedBy = "event2")
-    List<Users> speakerList;
+    List<User> speakerList;
 }

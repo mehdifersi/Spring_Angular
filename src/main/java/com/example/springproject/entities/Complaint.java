@@ -27,7 +27,7 @@ public class Complaint   implements Serializable{
     private StatusComplaint status;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    Users complaintPar;
+    User complaintPar;
 
 }
 

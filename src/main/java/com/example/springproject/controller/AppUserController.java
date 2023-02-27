@@ -1,18 +1,17 @@
 package com.example.springproject.controller;
 
-import com.example.springproject.ServicesImpl.UserServiceImp;
-import com.example.springproject.entities.Users;
+import com.example.springproject.ServicesImpl.AppUserServiceImp;
+import com.example.springproject.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/app-user")
 @CrossOrigin("*")
-public class UserController extends BaseController<Users,Integer>{
+public class AppUserController extends BaseController<User,Integer>{
 
     @Autowired
-    UserServiceImp userServiceImp;
+    AppUserServiceImp userServiceImp;
 
     /*@Override
     public Users addStudent(Users user){
