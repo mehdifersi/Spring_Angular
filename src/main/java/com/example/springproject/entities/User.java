@@ -36,6 +36,10 @@ public class User implements UserDetails {
     private String email;
     private String password;
     private String numTel;
+    @Enumerated(EnumType.STRING)
+    private NiveauActuel niveauActuel;
+    @Enumerated(EnumType.STRING)
+    private NiveauSuivant niveauSuivant;
     @Temporal(TemporalType.DATE)
     @JsonFormat(pattern = "MM/dd/yyyy")
     private Date birthday;

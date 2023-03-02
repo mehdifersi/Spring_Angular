@@ -4,6 +4,7 @@ import com.example.springproject.ServicesImpl.AppUserServiceImp;
 import com.example.springproject.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/app-user")
@@ -27,16 +28,16 @@ public class AppUserController extends BaseController<User,Integer>{
     }
     */
 
-/*
+
     @PostMapping("/addStudent")
-    public Users addStudent(@RequestBody Users user){
+    public User addStudent(@RequestBody User user){
         userServiceImp.addStudent(user);
         return user;
     }
 
     @PostMapping("/addFileAndAssignToStudent/{idUser}")
-    public void addFileAndAssignToStudent(@RequestParam("file") MultipartFile file,@PathVariable Integer idUser){
+    public void addFileAndAssignToStudent(@RequestParam("file") MultipartFile file, @PathVariable Integer idUser){
         userServiceImp.addFileAndAssignToStudent(file,idUser);
     }
-*/
+
 }

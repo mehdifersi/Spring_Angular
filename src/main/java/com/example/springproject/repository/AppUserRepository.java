@@ -5,7 +5,7 @@ import com.example.springproject.entities.User;
 import java.util.Optional;
 
 
-public interface AppUserRepository extends BaseRepository<User,Integer> {
+public interface AppUserRepository extends BaseRepository<User,Integer>  {
 
 
     Optional<User> findByEmail(String email);
