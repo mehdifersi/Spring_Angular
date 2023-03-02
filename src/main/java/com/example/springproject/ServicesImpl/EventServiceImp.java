@@ -1,12 +1,13 @@
 package com.example.springproject.ServicesImpl;
 
+import com.example.springproject.ServiceInterface.EventServiceInterface;
 import com.example.springproject.entities.Event;
 import com.example.springproject.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EventServiceImp extends BaseServiceImp<Event,Integer>{
+public class EventServiceImp extends BaseServiceImp<Event,Integer> implements EventServiceInterface {
 
     @Autowired
     EventRepository eventRepository;

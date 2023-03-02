@@ -1,4 +1,5 @@
 package com.example.springproject.entities;
 
-public class test {
+public enum TokenType {
+    BAERER
 }

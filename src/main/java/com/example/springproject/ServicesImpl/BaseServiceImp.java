@@ -2,12 +2,16 @@ package com.example.springproject.ServicesImpl;
 
 import com.example.springproject.ServiceInterface.BaseServiceInterface;
 import com.example.springproject.repository.BaseRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
 public class BaseServiceImp<T, id> implements BaseServiceInterface<T, id>{
+
 
 
     @Autowired
